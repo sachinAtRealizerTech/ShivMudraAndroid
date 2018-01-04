@@ -3,8 +3,8 @@
     android:orientation="vertical"
     android:descendantFocusability="blocksDescendants"
     android:layout_width="match_parent"
-    android:layout_margin="10dp"
-    android:padding="5dp"
+    android:layout_margin="12dp"
+    android:padding="12dp"
     android:background="@drawable/shadoweffect"
     android:layout_height="wrap_content">
             <LinearLayout
@@ -17,7 +17,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/txtname"
                         android:text="Discount Name"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:padding="2dp"
                         android:layout_gravity="center_vertical"
                         android:textColor="@color/black"/>
@@ -27,7 +27,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/txtdate"
                         android:text="30 Dec 2017"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         android:padding="2dp"
                         android:gravity="center_vertical|right"
                         android:textColor="@color/darkgrey"/>
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtpercentage"
             android:text="Discount Percentage"
-            android:textSize="12sp"
+            android:textSize="16sp"
             android:padding="2dp"
             android:layout_gravity="center_vertical"
             android:textColor="@color/darkgrey"/>
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtvalue"
             android:text="30 Dec 2017"
-            android:textSize="12sp"
+            android:textSize="16sp"
             android:padding="2dp"
             android:gravity="center_vertical|right"
             android:textStyle="bold"

@@ -12,6 +12,7 @@ import com.realizertech.shivmudra.R;
 import com.realizertech.shivmudra.model.DiscountModel;
 import com.realizertech.shivmudra.model.DiscountsReceived;
 import com.realizertech.shivmudra.model.ReferralModel;
+import com.realizertech.shivmudra.utils.Config;
 
 import java.util.List;
 
@@ -66,7 +67,7 @@ public class DiscountListAdapter extends BaseAdapter {
         }
 
         holder.name.setText(referral.get(position).getDiscountType());
-        holder.date.setText(referral.get(position).getCreateTS());
+        holder.date.setText(Config.getfromDate(referral.get(position).getCreateTS()));
         holder.percenatge.setText("Discount Percentage: "+referral.get(position).getDiscountPercentage()+"%");
         holder.value.setText("Discount Value: ₹" +referral.get(position).getDiscountAmount());
 

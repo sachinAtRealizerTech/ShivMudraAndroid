@@ -108,6 +108,20 @@ public class Config {
         }
     }
 
+    public static String getfromDate(String webDate) {
+        String datetimevalue = null;
+        try {
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
+            SimpleDateFormat df1 = new SimpleDateFormat("dd MMM yyyy");
+            Date temp = df.parse(webDate);
+            datetimevalue = df1.format(temp);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        return datetimevalue;
+    }
 
     public static String getDate() {
         String datetimevalue = null;

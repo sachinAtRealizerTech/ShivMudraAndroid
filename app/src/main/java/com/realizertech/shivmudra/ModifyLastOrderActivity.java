@@ -135,6 +135,8 @@ public class ModifyLastOrderActivity extends BaseActivity{
                                     vegies.setAdapter(vegetableListAdapter);
                                     vegies.setVisibility(View.VISIBLE);
                                 }
+                                homeDCharge = order.getDeliveryCharges();
+                                homeDThreashhold = order.getFreeDeliveryThreshold();
                                 orderId = order.getOrderId();
                                 totPrice = order.getTotalCost();
                                 mallSave = order.getMallCostSaved();
