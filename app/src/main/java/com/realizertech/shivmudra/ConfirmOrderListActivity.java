@@ -144,7 +144,13 @@ public class ConfirmOrderListActivity extends BaseActivity {
                        orderInput.setItemCSV(csv);
                        orderInput.setOrderId(getIntent().getIntExtra("OrderId",0));
                        orderInput.setDeliveryCost(getIntent().getIntExtra("HdCharg",0));
-                       placeOrder(orderInput);
+                       if(orderId !=0){
+                           updateOrder(orderInput);
+                       }
+                       else {
+                           placeOrder(orderInput);
+                       }
+
                    }
                    else {
                        Config.alertDialog(ConfirmOrderListActivity.this,"Network Error","Please check yout internet connection");
@@ -207,11 +213,11 @@ public class ConfirmOrderListActivity extends BaseActivity {
         disreferpercentage = getIntent().getDoubleExtra("ReferDisPer",0);
         disrefervalue = getIntent().getDoubleExtra("ReferDisVal",0);
         if(disvalue != 0){
-            totaldisCost = total - disvalue;
+            totaldisCost = Double.valueOf(String.format("%.2f",(total - disvalue)));
             totalPrice.setText("₹"+total+" - "+"₹"+disvalue+" = ₹"+totaldisCost);
         }
         else if(disrefervalue != 0){
-            totaldisCost = total - disrefervalue;
+            totaldisCost =  Double.valueOf(String.format("%.2f",(total - disrefervalue)));
             totalPrice.setText("₹"+total+" - "+"₹"+disrefervalue+" = ₹"+totaldisCost);
         }
         dateSlots = new ArrayList<>();
@@ -289,6 +295,7 @@ public class ConfirmOrderListActivity extends BaseActivity {
                             for(int i=0;i< discnt.size();i++){
                                 if(discnt.get(i).isApplicable()){
                                     double val = (discnt.get(i).getDiscountPercentage()/100) * total;
+                                    val = Double.valueOf(String.format("%.2f",val));
                                     discnt.get(i).setDiscountValue(val);
                                     counter = counter + 1;
                                     discounts.add(discnt.get(i));
@@ -324,6 +331,19 @@ public class ConfirmOrderListActivity extends BaseActivity {
 
                 if(responseString != null){
                   successDialog(ConfirmOrderListActivity.this);
+                }
+            }
+        });
+    }
+
+    public void updateOrder(OrderInput order){
+        EnqueueWrapper.with(this).enqueue(ApiService.getService().updateOrder(order), new EnqueueWrapper.EnqueueSuccess() {
+            @Override
+            public void onSuccess(String responseString) {
+                hideLoading();
+
+                if(responseString != null){
+                    successDialog(ConfirmOrderListActivity.this);
                 }
             }
         });

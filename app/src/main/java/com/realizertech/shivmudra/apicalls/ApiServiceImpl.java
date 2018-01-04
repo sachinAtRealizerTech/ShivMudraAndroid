@@ -60,6 +60,9 @@ public interface ApiServiceImpl {
     @POST("api/orders/PlaceOrder")
     Call<ResponseBody> placeOrder(@Body OrderInput orderInput);
 
+    @POST("api/orders/UpdateOrder")
+    Call<ResponseBody> updateOrder(@Body OrderInput orderInput);
+
     @POST("api/orders/GetAvailableDiscounts")
     Call<ResponseBody> getAvailableDiscounts(@Body UserInputs userInputs);
 

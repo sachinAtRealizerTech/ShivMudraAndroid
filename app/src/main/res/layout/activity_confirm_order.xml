@@ -267,29 +267,39 @@
             android:layout_marginBottom="1dp"
             android:paddingRight="10dp"
             android:background="@color/colorPrimaryDark">
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/foodcart"
-                android:layout_marginLeft="15dp"
-                android:id="@+id/img_cart"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@+id/img_cart"
-                android:layout_marginLeft="10dp"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:id="@+id/cartlayout"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/foodcart"
+                    android:layout_marginLeft="15dp"
+                    android:id="@+id/img_cart"/>
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:textSize="12sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
                     android:text="0 Item in cart"
                     android:gravity="bottom"
                     android:textColor="@color/white"
                     android:id="@+id/txtvegCount"
                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/cartlayout"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"

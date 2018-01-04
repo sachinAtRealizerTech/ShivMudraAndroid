@@ -280,5 +280,5 @@
         android:gravity="center"
         android:textSize="12sp"
         android:id="@+id/txt_copyright"
-        android:text="© RealizerTech 2017"/>
+        android:text="© RealizerTech 2018"/>
 </RelativeLayout>

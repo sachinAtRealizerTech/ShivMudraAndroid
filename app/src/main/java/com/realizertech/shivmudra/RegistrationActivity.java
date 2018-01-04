@@ -57,7 +57,7 @@ public class RegistrationActivity extends BaseActivity{
     public TextView txtWhat,txtWhy,txtlogin;
     public SocietyNameAdapter societyNameAdapter;
     public static String fireBasetoken=null;
-    public String referCode ="";
+    public String referCode ="",socname;
     public int societyId=0;
     public Switch refaral;
     public ArrayList<Location> locations;
@@ -169,7 +169,7 @@ public class RegistrationActivity extends BaseActivity{
                     else {
                         User user = new User();
                         user.setFlatNo(flatNo.getText().toString().trim());
-                        user.setSocietyName(societyName.getText().toString().trim());
+                        user.setSocietyName(socname);
                         user.setName(name.getText().toString().trim());
                         user.setContactNo(mobileNo.getText().toString().trim());
                         user.setSocietyId(societyId);
@@ -178,6 +178,7 @@ public class RegistrationActivity extends BaseActivity{
                         user.setId(0);
                         user.setRegistered(false);
                         user.setUserToken("");
+                        Log.d("data",user.toString());
                         registerUser(user);
                     }
                     // }
@@ -217,6 +218,7 @@ public class RegistrationActivity extends BaseActivity{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Location societyModel = (Location) parent.getItemAtPosition(position);
+                socname = societyModel.getName();
                 societyName.setText(societyModel.getName());
                 societyId = societyModel.getLocationId();
                 SharedPreferences sharedpreferences = PreferenceManager.getDefaultSharedPreferences(RegistrationActivity.this);

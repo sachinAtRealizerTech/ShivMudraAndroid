@@ -69,7 +69,7 @@ public class DiscountListAdapter extends BaseAdapter {
         holder.name.setText(referral.get(position).getDiscountType());
         holder.date.setText(Config.getfromDate(referral.get(position).getCreateTS()));
         holder.percenatge.setText("Discount Percentage: "+referral.get(position).getDiscountPercentage()+"%");
-        holder.value.setText("Discount Value: ₹" +referral.get(position).getDiscountAmount());
+        holder.value.setText("Discount Value: ₹" +String.format("%.2f",referral.get(position).getDiscountAmount()));
 
         return this.convertView;
     }

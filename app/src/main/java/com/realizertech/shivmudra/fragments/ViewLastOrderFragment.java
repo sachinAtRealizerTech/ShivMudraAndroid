@@ -94,9 +94,9 @@ public class ViewLastOrderFragment extends BaseFragment{
                                 marketSave = order.getMarketCostSaved();
                                 orderedListAdapter = new OrderedListAdapter(order.getItems(),getActivity());
                                 vegies.setAdapter(orderedListAdapter);
-                                txtprice.setText("Total Price: ₹"+totPrice);
-                                txtmallSave.setText("₹ "+mallSave);
-                                txtmarketSave.setText("₹ "+marketSave);
+                                txtprice.setText("Total Price: ₹"+String.format("%.2f",totPrice));
+                                txtmallSave.setText("₹ "+String.format("%.2f",mallSave));
+                                txtmarketSave.setText("₹ "+String.format("%.2f",marketSave));
                                 orderStatus.setText("Order Status: "+order.getOrderStatus());
                                 if(order.getItems().size()>1)
                                 txtcount.setText(order.getItems().size()+" Items purchased");

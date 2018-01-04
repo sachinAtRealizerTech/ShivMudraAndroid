@@ -107,6 +107,7 @@ public class ModifyLastOrderActivity extends BaseActivity{
                         Gson gson = new Gson();
                         Order order = gson.fromJson(responseString,Order.class);
                         if(order != null){
+                            if(order.getOrderStatus().equalsIgnoreCase("CONFIRMED")){
                             List<OrderItems> items = order.getItems();
                             if(items.size()>0){
                                 for (int i=0;i<order.getItems().size();i++){
@@ -138,19 +139,24 @@ public class ModifyLastOrderActivity extends BaseActivity{
                                 homeDCharge = order.getDeliveryCharges();
                                 homeDThreashhold = order.getFreeDeliveryThreshold();
                                 orderId = order.getOrderId();
-                                totPrice = order.getTotalCost();
-                                mallSave = order.getMallCostSaved();
-                                marketSave = order.getMarketCostSaved();
+                                totPrice = Double.valueOf(String.format("%.2f",order.getTotalCost()));
+                                mallSave = Double.valueOf(String.format("%.2f",order.getMallCostSaved()));
+                                marketSave = Double.valueOf(String.format("%.2f",order.getMarketCostSaved()));
                                 referdisper = order.getReferralDiscountPercentage();
-                                referdisval = order.getReferralCostSaved();
+                                referdisval = Double.valueOf(String.format("%.2f",order.getReferralCostSaved()));
                                 firstorderdisper = order.getFirstOrderDiscountPercentage();
-                                firstorderval = order.getFirstOrderDiscount();
+                                firstorderval = Double.valueOf(String.format("%.2f",order.getFirstOrderDiscount()));
                                 txtprice.setText("Total Price: ₹"+totPrice);
 
                             }
                             else {
                                 vegies.setVisibility(View.GONE);
                             }
+                        }
+                        else {
+                            vegies.setVisibility(View.GONE);
+                                addNew.setVisibility(View.GONE);
+                        }
                         }
                         else {
                             vegies.setVisibility(View.GONE);
@@ -234,18 +240,24 @@ public class ModifyLastOrderActivity extends BaseActivity{
     }
 
     public void sendListConfirm(){
-        Intent intent = new Intent(ModifyLastOrderActivity.this,ConfirmOrderListActivity.class);
-        intent.putExtra("SelectedList", (Serializable) adapterList);
-        intent.putExtra("TotalPrice",totPrice);
-        intent.putExtra("TotalMallSave",mallSave);
-        intent.putExtra("TotalMarketSave",marketSave);
-        intent.putExtra("HdCharg",homeDCharge);
-        intent.putExtra("OrderId",orderId);
-        intent.putExtra("FirstOrderDisPer",firstorderdisper);
-        intent.putExtra("FirstOrderDisVal",firstorderval);
-        intent.putExtra("ReferDisPer",referdisper);
-        intent.putExtra("ReferDisVal",referdisval);
-        startActivity(intent);
+        if(adapterList.size()<=0){
+            Config.alertDialog(ModifyLastOrderActivity.this,"Error","No Pending Orders to Modify");
+        }
+        else {
+            Intent intent = new Intent(ModifyLastOrderActivity.this,ConfirmOrderListActivity.class);
+            intent.putExtra("SelectedList", (Serializable) adapterList);
+            intent.putExtra("TotalPrice",totPrice);
+            intent.putExtra("TotalMallSave",mallSave);
+            intent.putExtra("TotalMarketSave",marketSave);
+            intent.putExtra("HdCharg",homeDCharge);
+            intent.putExtra("OrderId",orderId);
+            intent.putExtra("FirstOrderDisPer",firstorderdisper);
+            intent.putExtra("FirstOrderDisVal",firstorderval);
+            intent.putExtra("ReferDisPer",referdisper);
+            intent.putExtra("ReferDisVal",referdisval);
+            startActivity(intent);
+        }
+
     }
 
     @Override

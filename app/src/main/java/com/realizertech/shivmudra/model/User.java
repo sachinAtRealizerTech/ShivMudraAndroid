@@ -1,5 +1,7 @@
 package com.realizertech.shivmudra.model;
 
+import com.google.gson.Gson;
+
 /**
  * Created by Win on 12/22/2017.
  */
@@ -94,5 +96,9 @@ public class User {
 
     public void setReferralToken(String referralToken) {
         ReferralToken = referralToken;
+    }
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
     }
 }
