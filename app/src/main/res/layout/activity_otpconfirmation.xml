@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:facebook="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="20dp"
+            android:layout_height="80dp"
+            android:src="@drawable/logo"
+            android:scaleType="fitXY"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/applogo"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/applogo"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/txtmessage"
+            android:text="Please enter the OTP in confirmation in order to complete Registration"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtmessage"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/txtmessagetwo"
+            android:text="You will receive OTP in the message.\nIf you don't get SMS due to DND or NO disturb time, Please call on 880 555 8702 for getting your OTP"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/darkgrey"
+            android:textSize="12sp"/>
+<!--        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:id="@+id/txteditlink"
+            android:layout_below="@+id/txtmessage"
+            android:text="Click Here to Edit Mobile Number"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/link"
+            android:textSize="12sp"/>-->
+
+            <EditText
+                android:id="@+id/edtmobileno"
+                android:layout_below="@+id/txtmessagetwo"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:hint="Mobile Number"
+                android:inputType="number"
+                android:maxLength="10"
+                android:paddingLeft="12dp"
+                android:textSize="16sp"
+                android:background="@drawable/edittextsquare"
+                />
+
+
+        <EditText
+            android:id="@+id/edtotp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:hint="OTP"
+            android:paddingLeft="12dp"
+            android:textSize="16sp"
+            android:inputType="number"
+            android:layout_below="@+id/edtmobileno"
+            android:background="@drawable/edittextsquare"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/otpbutton"
+            android:layout_below="@+id/edtotp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:padding="7dp"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btnconfirm"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Confirm"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/buttongradient"
+                android:textColor="#FFF"/>
+
+            <Button
+                android:id="@+id/btnresend"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Resend OTP"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/buttongradient"
+                android:textColor="#FFF"
+                android:layout_below="@+id/edtmobileno"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/otpbutton"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/txtrefmsg"
+            android:text="# ref msg1\n#ref msg2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"/>
+
+
+    </RelativeLayout>
+    </ScrollView>
+    <com.realizertech.shivmudra.customview.ProgressWheel
+        android:id="@+id/loading"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        app:matProg_barColor="@color/colorAccent"
+        app:matProg_progressIndeterminate="true"
+        />
+</RelativeLayout>

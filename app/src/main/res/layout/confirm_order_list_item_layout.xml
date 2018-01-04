@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants"
+    android:layout_width="match_parent"
+    android:background="@android:color/transparent"
+    android:layout_marginRight="7dp"
+    android:layout_marginBottom="5dp"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="0.15"
+        android:layout_height="25dp"
+        android:id="@+id/imgVeg"
+        android:src="@drawable/image1"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="0.7"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtvegName"
+        android:text="Vegetable/Fruit Name"
+        android:textSize="14sp"
+        android:padding="4dp"
+        android:textColor="@color/darkgrey"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtquantity"
+        android:text="5"
+        android:textSize="14sp"
+        android:padding="4dp"
+        android:textColor="@color/darkgrey"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtvegprice"
+        android:text="Price"
+        android:textSize="14sp"
+        android:paddingRight="2dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:textColor="@color/darkgrey"/>
+
+
+</LinearLayout>

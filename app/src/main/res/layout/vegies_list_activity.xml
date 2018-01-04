@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/toggleLayout"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/togglebg"
+        android:layout_centerHorizontal="true"
+        android:layout_height="50dp">
+        <ToggleButton
+            android:id="@+id/veg"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:background="@drawable/buttongradient"
+            android:checked="true"
+            android:layout_marginLeft="10dp"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textOff="Vegetables"
+            android:textSize="14sp"
+            android:textOn="Vegetables" />
+
+        <ToggleButton
+            android:id="@+id/fruit"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textOff="Fruits"
+            android:textOn="Fruits" />
+        <ToggleButton
+            android:id="@+id/spilled"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textOff="Chopped"
+            android:textSize="14sp"
+            android:textOn="Chopped" />
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toggleLayout"
+        android:layout_above="@+id/txthd"
+        android:id="@+id/listVeg"
+        android:background="@color/white"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp">
+    </ListView>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/btnAddNew"
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="30dp"
+        app:backgroundTint="@color/colorAccent"
+        android:src="@drawable/plussymbol"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/txthd"
+        android:padding="2dp"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_above="@+id/txtTotalPrice"
+        android:background="@color/dot_dark_screen1"
+        android:text="Min order ₹250 for free delivery."
+        android:textColor="@color/white"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:id="@+id/txtTotalPrice"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="Total Price: "
+        android:background="@color/colorPrimaryDark"/>
+
+    <com.realizertech.shivmudra.customview.ProgressWheel
+        android:id="@+id/loading"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        app:matProg_barColor="@color/colorAccent"
+        app:matProg_progressIndeterminate="true"
+        />
+
+</RelativeLayout>

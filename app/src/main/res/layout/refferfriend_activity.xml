@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:facebook="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+       android:layout_gravity="center_vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_height="80dp"
+            android:src="@drawable/logo"
+            android:scaleType="fitXY"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/applogo"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/applogo"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center"
+            android:id="@+id/txttitle"
+            android:text="# You will get 10% bonus on every Referal.\n# Every Refered friend will get 10% on the first order."
+            android:textSize="16sp"/>
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:id="@+id/societyname"
+            android:layout_below="@+id/txttitle"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:hint="Type Your Friends Society Name"
+            android:paddingLeft="12dp"
+            android:paddingRight="2dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textSize="16sp"
+            android:background="@drawable/edittextsquare"/>
+
+        <EditText
+            android:layout_below="@+id/societyname"
+            android:id="@+id/edtname"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:hint="Name"
+            android:paddingLeft="12dp"
+            android:textSize="16sp"
+            android:background="@drawable/edittextsquare"
+            />
+    <EditText
+        android:layout_below="@+id/edtname"
+        android:id="@+id/edtmobileno"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Mobile Number"
+        android:inputType="number"
+        android:maxLength="10"
+        android:paddingLeft="12dp"
+        android:textSize="16sp"
+        android:background="@drawable/edittextsquare"
+        />
+
+        <Button
+            android:id="@+id/btnRefer"
+            android:layout_width="140dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:text="Refer"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/buttongradient"
+            android:textColor="#FFF"
+            android:layout_below="@+id/edtmobileno"
+            />
+
+
+    </RelativeLayout>
+</ScrollView>
+    <com.realizertech.shivmudra.customview.ProgressWheel
+        android:id="@+id/loading"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        app:matProg_barColor="@color/colorAccent"
+        app:matProg_progressIndeterminate="true"
+        />
+</RelativeLayout>

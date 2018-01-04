@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:facebook="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_height="80dp"
+            android:src="@drawable/logo"
+            android:scaleType="fitXY"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/applogo"/>
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:id="@+id/societyname"
+            android:layout_below="@+id/applogo"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:hint="Type Your Society Name"
+            android:paddingLeft="12dp"
+            android:paddingRight="2dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textSize="16sp"
+            android:background="@drawable/edittextsquare"/>
+
+        <EditText
+            android:layout_below="@+id/societyname"
+            android:id="@+id/edtname"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:hint="Name"
+            android:maxLength="200"
+            android:paddingLeft="12dp"
+            android:textSize="16sp"
+            android:background="@drawable/edittextsquare"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutname"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@+id/edtname"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/edtflatno"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="35dp"
+                android:layout_marginRight="10dp"
+                android:hint="Flat No."
+                android:paddingLeft="12dp"
+                android:textSize="16sp"
+                android:maxLength="50"
+                android:background="@drawable/edittextsquare" />
+            <EditText
+                android:id="@+id/edtmobileno"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="35dp"
+                android:hint="Mobile Number"
+                android:inputType="number"
+                android:maxLength="10"
+                android:layout_marginLeft="10dp"
+                android:paddingLeft="12dp"
+                android:textSize="16sp"
+                android:background="@drawable/edittextsquare"
+                />
+        </LinearLayout>
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:id="@+id/rbreferral"
+            style="@style/SCBSwitch"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            android:text="Are you referred by Friend ? "
+            android:layout_below="@+id/layoutname"/>
+        <EditText
+            android:layout_below="@+id/rbreferral"
+            android:id="@+id/edtReferralCode"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:enabled="false"
+            android:visibility="gone"
+            android:hint="Please Enter Referral Code"
+            android:paddingLeft="12dp"
+            android:textSize="16sp"
+            android:background="@drawable/edittextsquare"/>
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:text="Register"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="33dp"
+            android:background="@drawable/buttongradient"
+            android:textColor="@color/white"
+            android:layout_below="@+id/rbreferral"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutSignUp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/btnRegister"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:text="If your Society doesn't exist, please call on 8805558702"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtlogin"
+            android:layout_marginTop="7dp"
+            android:layout_below="@+id/layoutSignUp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/link"
+            android:text="Already registered? Click Here To login"
+            android:textSize="14sp"/>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/txtlogin">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout_contact"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorPrimaryDark"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorPrimaryDark"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_contact"
+            android:id="@+id/whywhat"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtwhy"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="Why SHIV-MUDRA ?"
+                android:textSize="14sp"
+                android:textColor="@color/colorPrimary"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtwhat"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="What is SHIV-MUDRA ?"
+                android:textSize="14sp"
+                android:textColor="@color/colorPrimary"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/whywhat"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:id="@+id/txt_copyright"
+            android:text="© RealizerTech 2017"/>
+</RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>
+    <com.realizertech.shivmudra.customview.ProgressWheel
+        android:id="@+id/loading"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        app:matProg_barColor="@color/colorAccent"
+        app:matProg_progressIndeterminate="true"
+        />
+
+</RelativeLayout>
